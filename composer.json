@@ -1,0 +1,22 @@
+{
+  "name": "muspelheim/c3charts-bundle",
+  "type": "symfony-bundle",
+  "description": "Simple bundle for building pretty charts based on c3js",
+  "keywords": ["symfony2", "charting", "charts", "c3js", "chart", "graph", "graphs", "muspelheim"],
+  "homepage": "https://github.com/marcaube/ObHighchartsBundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Evgeny Padniuk"
+    }
+  ],
+
+  "require": {
+    "php": ">=5.3",
+    "symfony/symfony": "~2.7|~3.0"
+  },
+
+  "autoload": {
+    "psr-4": { "Muspelheim\\C3ChartsBundle\\": "" }
+  }
+}
