@@ -38,3 +38,6 @@
 
 # Composer PHAR
 /composer.phar
+
+#Bower files
+/Resources/public/vendor/
