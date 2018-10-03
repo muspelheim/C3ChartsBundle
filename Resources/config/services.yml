@@ -3,6 +3,6 @@ parameters:
 
 services:
   c3_charts.twig.highcharts_extension:
-    class: %c3_charts.twig_extension.class%
+    class: "%c3_charts.twig_extension.class%"
     tags:
         - { name: twig.extension }
