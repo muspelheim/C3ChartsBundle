@@ -49,13 +49,13 @@ abstract class AbstractChart
 
     /**
      * @param string $name
-     * @param mixed  $value
+     * @param array  $args
      *
      * @return $this
      */
-    public function __call($name, $value)
+    public function __call($name, $args)
     {
-        $this->$name = $value;
+        $this->$name = $args[0];
 
         return $this;
     }
