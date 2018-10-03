@@ -10,16 +10,28 @@ use Muspelheim\C3ChartsBundle\C3\ChartInterface;
  */
 class C3Extension extends \Twig_Extension
 {
+    /**
+     * @return array|
+     */
     public function getFunctions()
     {
-        return array(
-            new \Twig_SimpleFunction('c3chart', array($this, 'c3chart'), array('is_safe' => array('html'))),
-        );
+        return [
+            new \Twig_SimpleFunction('c3chart', [$this, 'c3chart'], ['is_safe' => ['html']]),
+        ];
     }
+
+    /**
+     * @param ChartInterface $chart
+     * @return string
+     */
     public function c3chart(ChartInterface $chart)
     {
         return $chart->render();
     }
+
+    /**
+     * @return string
+     */
     public function getName()
     {
         return 'c3_extension';
