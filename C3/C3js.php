@@ -14,9 +14,9 @@ class C3js extends AbstractChart implements ChartInterface
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    public function render()
+    public function render(): string
     {
         $chartJS = "$(function () {";
         $chartJS .= "\nvar " . (isset($this->bindto) ? $this->bindto : 'chart') . " = new c3.generate({\n";

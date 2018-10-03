@@ -12,8 +12,9 @@
   ],
 
   "require": {
-    "php": ">=5.3",
-    "symfony/symfony": ">=2.7.13 || >=2.8.6 || >3.0.6"
+    "php": ">=7",
+    "symfony/symfony": ">=2.7.13 || >=2.8.6 || >3.0.6",
+    "ext-json": "*"
   },
 
   "autoload": {

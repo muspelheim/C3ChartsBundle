@@ -13,7 +13,7 @@ class ChartOption
     /**
      * @param string $name
      */
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->option = $name;
         $this->{$name} = new \stdClass();
@@ -25,7 +25,7 @@ class ChartOption
      *
      * @return $this
      */
-    public function __call($name, $value)
+    public function __call(string $name, array $value): ChartOption
     {
         $option = $this->option;
         $this->{$option}->{$name} = $value[0];
@@ -49,9 +49,9 @@ class ChartOption
     /**
      * @param string $name
      *
-     * @return mixed
+     * @return bool
      */
-    public function __isset($name)
+    public function __isset($name): bool
     {
         $option = $this->option;
         

@@ -34,11 +34,11 @@ abstract class AbstractChart
 
     public function __construct()
     {
-        $chartOptions = array(
+        $chartOptions = [
             'bindto', 'area', 'size', 'data', 'padding', 'color', 'interaction', 'transition', 'axis', 'gauge',
             'grid', 'region', 'legend', 'tootip', 'subchart', 'zoom', 'point', 'line', 'bar', 'pie', 'donut', 'tooltip',
             'title',
-        );
+        ];
 
         foreach ($chartOptions as $option) {
             $this->initChartOption($option);
@@ -49,11 +49,11 @@ abstract class AbstractChart
 
     /**
      * @param string $name
-     * @param mixed  $value
+     * @param array  $value
      *
      * @return $this
      */
-    public function __call($name, $value)
+    public function __call(string $name, array $value)
     {
         $this->$name = $value;
 
@@ -63,7 +63,7 @@ abstract class AbstractChart
     /**
      * @param string $name
      */
-    protected function initChartOption($name)
+    protected function initChartOption(string $name)
     {
         $this->{$name} = new ChartOption($name);
     }
@@ -71,7 +71,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderBindTo()
+    protected function renderBindTo(): string
     {
         if ($this->bindto) {
             return 'bindto: ' . json_encode('#'.$this->bindto) . ",\n";
@@ -83,7 +83,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderArea()
+    protected function renderArea(): string
     {
         if (get_object_vars($this->area->area)) {
             return 'area: ' . json_encode($this->area->area) . ",\n";
@@ -95,7 +95,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderSize()
+    protected function renderSize(): string
     {
         if (get_object_vars($this->size->size)) {
             return 'size: ' . json_encode($this->size->size) . ",\n";
@@ -107,7 +107,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderData()
+    protected function renderData(): string
     {
         if (get_object_vars($this->data->data)) {
             return 'data: ' . json_encode($this->data->data) . ",\n";
@@ -119,7 +119,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderPadding()
+    protected function renderPadding(): string
     {
         if (get_object_vars($this->padding->padding)) {
             return 'padding: ' . json_encode($this->padding->padding) . ",\n";
@@ -131,7 +131,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderColor()
+    protected function renderColor(): string
     {
         if (get_object_vars($this->color->color)) {
             return 'color: ' . json_encode($this->color->color) . ",\n";
@@ -143,7 +143,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderInteraction()
+    protected function renderInteraction(): string
     {
         if (get_object_vars($this->interaction->interaction)) {
             return 'interaction: ' . json_encode($this->interaction->interaction) . ",\n";
@@ -155,7 +155,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderTransition()
+    protected function renderTransition(): string
     {
         if (get_object_vars($this->transition->transition)) {
             return 'transition: ' . json_encode($this->transition->transition) . ",\n";
@@ -167,7 +167,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderAxis()
+    protected function renderAxis(): string
     {
         if (get_object_vars($this->axis->axis)) {
             return 'axis: ' . json_encode($this->axis->axis) . ",\n";
@@ -179,7 +179,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderGrid()
+    protected function renderGrid(): string
     {
         if (get_object_vars($this->grid->grid)) {
             return 'grid: ' . json_encode($this->grid->grid) . ",\n";
@@ -191,7 +191,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderRegion()
+    protected function renderRegion(): string
     {
         if (get_object_vars($this->region->region)) {
             return 'region: ' . json_encode($this->region->region) . ",\n";
@@ -203,7 +203,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderLegend()
+    protected function renderLegend(): string
     {
         if (get_object_vars($this->legend->legend)) {
             return 'legend: ' . json_encode($this->legend->legend) . ",\n";
@@ -215,7 +215,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderTooltip()
+    protected function renderTooltip(): string
     {
         if (get_object_vars($this->tooltip->tooltip)) {
             return 'tooltip: ' . json_encode($this->tooltip->tooltip) . ",\n";
@@ -227,7 +227,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderSubchart()
+    protected function renderSubchart(): string
     {
         if (get_object_vars($this->subchart->subchart)) {
             return 'subchart: ' . json_encode($this->subchart->subchart) . ",\n";
@@ -239,7 +239,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderZoom()
+    protected function renderZoom(): string
     {
         if (get_object_vars($this->zoom->zoom)) {
             return 'zoom: ' . json_encode($this->zoom->zoom) . ",\n";
@@ -251,7 +251,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderPoint()
+    protected function renderPoint(): string
     {
         if (get_object_vars($this->point->point)) {
             return 'point: ' . json_encode($this->point->point) . ",\n";
@@ -263,7 +263,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderLine()
+    protected function renderLine(): string
     {
         if (get_object_vars($this->line->line)) {
             return 'line: ' . json_encode($this->line->line) . ",\n";
@@ -275,7 +275,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderBar()
+    protected function renderBar(): string
     {
         if (get_object_vars($this->bar->bar)) {
             return 'bar: ' . json_encode($this->bar->bar) . ",\n";
@@ -287,7 +287,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderPie()
+    protected function renderPie(): string
     {
         if (get_object_vars($this->pie->pie)) {
             return 'pie: ' . json_encode($this->pie->pie) . ",\n";
@@ -299,7 +299,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderDonut()
+    protected function renderDonut(): string
     {
         if (get_object_vars($this->donut->donut)) {
             return 'donut: ' . json_encode($this->donut->donut) . ",\n";
@@ -311,7 +311,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderGauge()
+    protected function renderGauge(): string
     {
         if (get_object_vars($this->gauge->gauge)) {
             return 'gauge: ' . json_encode($this->gauge->gauge) . ",\n";
@@ -323,7 +323,7 @@ abstract class AbstractChart
     /**
      * @return string
      */
-    protected function renderTitle()
+    protected function renderTitle(): string
     {
         if (get_object_vars($this->title->title)) {
             return 'title: ' . json_encode($this->title->title) . ",\n";
