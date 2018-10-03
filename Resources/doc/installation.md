@@ -2,19 +2,6 @@
 
 1. Run `composer require muspelheim/c3charts-bundle`
 
-2. Register the bundle in your `app/AppKernel.php`:
+   This will install this package and automatically update your `config/bundles.php` file, adding `Muspelheim\C3ChartsBundle\MuspelheimC3ChartsBundle` to it.
 
-   ``` php
-    <?php
-    ...
-    public function registerBundles()
-    {
-        $bundles = array(
-            ...
-            new Muspelheim\C3ChartsBundle\MuspelheimC3ChartsBundle(),
-            ...
-        );
-    ...
-   ```
-
-3. That's all!
+2. That's all!

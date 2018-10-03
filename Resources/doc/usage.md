@@ -24,10 +24,10 @@ public function chartAction()
     $chart->title->text('My pretty chart');
     $chart->axis->x->label("Horizontal title");
     $chart->axis->y->label("Vertical title");
-    $chart->data->column($data);
+    $chart->data->columns($data);
 
     return $this->render('::chart.html.twig', array(
-        'chart' => $data
+        'chart' => $chart
     ));
 }
 ```
