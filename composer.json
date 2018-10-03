@@ -10,16 +10,18 @@
       "name": "Evgeny Padniuk"
     }
   ],
-
   "require": {
-    "php": ">=7",
-    "symfony/config": "*",
-    "symfony/dependency-injection": "*",
-    "symfony/http-kernel": "*",
-    "twig/twig": "*"
+    "php": ">=7.0",
+    "symfony/framework-bundle":     "~2.7|~3.0|~4.0"
   },
-
+  "require-dev": {
+    "phpunit/phpunit":    "~6.1",
+    "twig/twig":          "~1.5|~2.0",
+    "symfony/var-dumper": "~2.7|~3.0|~4.0"
+  },
   "autoload": {
-    "psr-4": { "Muspelheim\\C3ChartsBundle\\": "" }
+    "psr-4": {
+      "Muspelheim\\C3ChartsBundle\\": ""
+    }
   }
 }
