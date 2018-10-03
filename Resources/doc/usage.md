@@ -35,10 +35,10 @@ public function chartAction()
 In template:
 
 ``` html
-<link href="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/muspelheimc3charts/vendor/c3/c3.min.css') }}" media="screen" rel="stylesheet" type="text/css" />
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+<script src="{{ asset('bundles/muspelheimc3charts/vendor/d3/d3.min.js') }}"></script>
+<script src="{{ asset('bundles/muspelheimc3charts/vendor/c3/c3.min.js') }}"></script>
 
 <script type="text/javascript">
     {{ c3chart(chart) }}

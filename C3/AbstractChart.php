@@ -8,6 +8,12 @@ namespace Muspelheim\C3ChartsBundle\C3;
  */
 abstract class AbstractChart
 {
+    protected static $chartOptions = [
+        'bindto', 'area', 'size', 'data', 'padding', 'color', 'interaction', 'transition', 'axis', 'gauge',
+        'grid', 'region', 'legend', 'tootip', 'subchart', 'zoom', 'point', 'line', 'bar', 'pie', 'donut', 'tooltip',
+        'title',
+    ];
+
     // Default options
     public $bindto;
     public $area;
@@ -34,13 +40,7 @@ abstract class AbstractChart
 
     public function __construct()
     {
-        $chartOptions = [
-            'bindto', 'area', 'size', 'data', 'padding', 'color', 'interaction', 'transition', 'axis', 'gauge',
-            'grid', 'region', 'legend', 'tootip', 'subchart', 'zoom', 'point', 'line', 'bar', 'pie', 'donut', 'tooltip',
-            'title',
-        ];
-
-        foreach ($chartOptions as $option) {
+        foreach (static::$chartOptions as $option) {
             $this->initChartOption($option);
         }
     }
