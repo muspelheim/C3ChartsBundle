@@ -11,5 +11,5 @@ interface ChartInterface
     /**
      * @return string
      */
-    public function render();
+    public function render(): string;
 }
