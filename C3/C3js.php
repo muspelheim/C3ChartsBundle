@@ -18,8 +18,7 @@ class C3js extends AbstractChart implements ChartInterface
      */
     public function render()
     {
-        $chartJS = "$(function () {";
-        $chartJS .= "\nvar " . (isset($this->bindto) ? $this->bindto : 'chart') . " = new c3.generate({\n";
+        $chartJS = "new c3.generate({";
         $chartJS .= $this->renderBindTo();
         $chartJS .= $this->renderArea();
         $chartJS .= $this->renderSize();
@@ -42,9 +41,19 @@ class C3js extends AbstractChart implements ChartInterface
         $chartJS .= $this->renderDonut();
         $chartJS .= $this->renderGauge();
         $chartJS .= $this->renderTitle();
-        $chartJS .= "});\n";
-        $chartJS .= "});\n";
+        $chartJS .= "})";
 
-        return trim($chartJS);
+        $onload = <<<ONLOAD
+;(function () {
+  var setup = function () { $chartJS }
+  if (document.readyState !== 'loading') {
+    setup()
+  } else {
+    document.addEventListener('DOMContentLoaded', setup)
+  }
+})();
+ONLOAD;
+
+        return trim($onload);
     }
 }
