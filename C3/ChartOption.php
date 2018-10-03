@@ -41,6 +41,9 @@ class ChartOption
     public function __get($name)
     {
         $option = $this->option;
+        if (!property_exists($this->{$option}, $name)) {
+            $this->{$option}->{$name} = new static($name);
+        }
         $value = $this->{$option}->{$name};
 
         return $value;
