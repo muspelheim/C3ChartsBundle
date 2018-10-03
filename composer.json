@@ -13,7 +13,10 @@
 
   "require": {
     "php": ">=5.3",
-    "symfony/symfony": ">=2.7.13 || >=2.8.6 || >3.0.6"
+    "symfony/config": "*",
+    "symfony/dependency-injection": "*",
+    "symfony/http-kernel": "*",
+    "twig/twig": "*"
   },
 
   "autoload": {
