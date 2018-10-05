@@ -4,5 +4,6 @@ parameters:
 services:
   c3_charts.twig.highcharts_extension:
     class: "%c3_charts.twig_extension.class%"
+    public: false
     tags:
         - { name: twig.extension }
