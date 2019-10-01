@@ -9,6 +9,8 @@ Simple bundle for building pretty charts based on c3js
 
 ## Documentation
 
+The bundle is capable with symfony 3/4
+
 * [Installation](Resources/doc/installation.md)
 * [Usage](Resources/doc/usage.md)
 * [Cookbook](Resources/doc/cookbook.md)
