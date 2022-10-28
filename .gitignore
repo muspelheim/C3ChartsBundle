@@ -41,3 +41,6 @@
 
 #Bower files
 /Resources/public/vendor/
+
+# PhpStorm
+.idea

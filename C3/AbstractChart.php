@@ -9,7 +9,7 @@ namespace Muspelheim\C3ChartsBundle\C3;
 abstract class AbstractChart
 {
     protected static $chartOptions = [
-        'bindto', 'area', 'size', 'data', 'padding', 'color', 'interaction', 'transition', 'axis', 'gauge',
+        'bindto', 'area', 'size', 'data', 'padding', 'color', 'colortransformer', 'interaction', 'transition', 'axis', 'gauge',
         'grid', 'region', 'legend', 'tootip', 'subchart', 'zoom', 'point', 'line', 'bar', 'pie', 'donut', 'tooltip',
         'title',
     ];
@@ -21,6 +21,7 @@ abstract class AbstractChart
     public $data;
     public $padding;
     public $color;
+    public $colortransformer;
     public $interaction;
     public $transition;
     public $axis;
@@ -110,7 +111,18 @@ abstract class AbstractChart
     protected function renderData(): string
     {
         if (get_object_vars($this->data->data)) {
-            return 'data: ' . json_encode($this->data->data) . ",\n";
+            $encodedData = json_encode($this->data->data);
+
+            if (get_object_vars($this->colortransformer->colortransformer) && strlen($encodedData) >= 2) {
+                $encodedData = substr_replace(
+                    $encodedData,
+                    ',"color": '.$this->colortransformer->colortransformer->colortransformer,
+                    (strlen($encodedData) - 1),
+                    0
+                );
+            }
+
+            return 'data: ' . $encodedData . ",\n";
         }
 
         return '';
