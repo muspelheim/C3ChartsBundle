@@ -20,3 +20,5 @@ The bundle is capable with symfony 3/4
 This bundle is available under the [MIT license](LICENSE).
 
 Component d3js  available under the MIT license and c3js too available under the MIT license
+
+Thank you!
